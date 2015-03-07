@@ -4,15 +4,13 @@ import com.google.common.base.Predicate;
 import com.mattdahepic.mobdropores.config.Config;
 import com.mattdahepic.mobdropores.config.OreGenConfigOption;
 import com.mattdahepic.mobdropores.utils.LogHelper;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockHelper;
-import net.minecraft.util.BlockPos;
-import net.minecraftforge.fml.common.IWorldGenerator;
-import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
 
@@ -68,10 +66,10 @@ public class MobDropOresGenerator implements IWorldGenerator {
                 BlockPos pos = new BlockPos(x,y,z);
                 if (base == null) {
                     new WorldGenMinable(ore.block, ore.veinSize).generate(world, random, pos);
-                    //LogHelper.info("Generating a(n) " + ore.blocks.getBlock().getLocalizedName() + " at the position " + x + "," + y + "," + z + " in the dimension " + world.provider.getDimensionId() + ".");
+                    //LogHelper.info("Generating a(n) " + ore.block.getBlock().getLocalizedName() + " at the position " + x + "," + y + "," + z + " in the dimension " + world.provider.getDimensionId() + ".");
                 } else {
                     new WorldGenMinable(ore.block, ore.veinSize, base).generate(world, random, pos);
-                    //LogHelper.info("Generating a(n) " + ore.blocks.getBlock().getLocalizedName() + " at the position " + x + "," + y + "," + z + " in the dimension " + world.provider.getDimensionId() + ".");
+                    //LogHelper.info("Generating a(n) " + ore.block.getBlock().getLocalizedName() + " at the position " + x + "," + y + "," + z + " in the dimension " + world.provider.getDimensionId() + ".");
                 }
             }
         }

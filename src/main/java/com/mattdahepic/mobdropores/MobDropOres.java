@@ -4,14 +4,14 @@ import com.mattdahepic.mobdropores.blocks.ores.*;
 import com.mattdahepic.mobdropores.config.Config;
 import com.mattdahepic.mobdropores.utils.LogHelper;
 import com.mattdahepic.mobdropores.world.MobDropOresGenerator;
+import net.minecraft.block.Block;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.common.Mod;
 
 @Mod(modid = MobDropOres.MODID,name = MobDropOres.NAME,version = MobDropOres.VERSION)
 public class MobDropOres {
@@ -27,7 +27,7 @@ public class MobDropOres {
 
     public static Configuration configFile;
 
-    //blocks
+    //block
     public static Block oreRottenFlesh = new OreRottenFlesh();
     public static Block oreGunpowder = new OreGunpowder();
     public static Block oreEnderpearl = new OreEnderpearl();
@@ -39,7 +39,7 @@ public class MobDropOres {
     public static Block oreBone = new OreBone();
     public static Block oreSlimeball = new OreSlimeball();
     public static Block oreNetherStar = new OreNetherStar();
-    //items
+    //item
 
     @Mod.EventHandler
     public static void preInit (FMLPreInitializationEvent event) {

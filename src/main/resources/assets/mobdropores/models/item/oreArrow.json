@@ -1,5 +1,5 @@
 {
-  "parent":"mobdropores:blocks/oreBlazeRod",
+  "parent":"mobdropores:block/oreArrow",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

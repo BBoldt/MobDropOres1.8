@@ -1,5 +1,5 @@
 {
-  "parent":"mobdropores:blocks/oreGhastTear",
+  "parent":"mobdropores:block/oreGunpowder",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

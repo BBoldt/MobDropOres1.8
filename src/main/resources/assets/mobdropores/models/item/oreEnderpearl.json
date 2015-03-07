@@ -1,5 +1,5 @@
 {
-  "parent":"mobdropores:blocks/oreNetherStar",
+  "parent":"mobdropores:block/oreEnderpearl",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],
