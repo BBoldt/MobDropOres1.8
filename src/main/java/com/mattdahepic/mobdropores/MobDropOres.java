@@ -20,7 +20,7 @@ public class MobDropOres {
 
     public static final String MODID = "mobdropores";
     public static final String NAME = "Mob Drop Ores";
-    public static final String VERSION = "mc1.7.10-v1.0";
+    public static final String VERSION = "mc1.8-v1.0";
 
     @SidedProxy(clientSide = "com.mattdahepic.mobdropores.client.ClientProxy",serverSide = "com.mattdahepic.mobdropores.CommonProxy")
     public static CommonProxy proxy;

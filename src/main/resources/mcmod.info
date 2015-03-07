@@ -3,7 +3,7 @@
   "modid": "mobdropores",
   "name": "Mob Drop Ores",
   "description": "Adds ores to the world that drop mob drops.",
-  "version": "mc1.7.10-v1.0",
+  "version": "mc1.8-v1.0",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
