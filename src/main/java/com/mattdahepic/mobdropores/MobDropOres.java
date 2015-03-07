@@ -47,10 +47,10 @@ public class MobDropOres {
     }
     @Mod.EventHandler
     public static void init (FMLInitializationEvent event) {
-        proxy.registerRenderers();
         proxy.registerBlocksItems();
         proxy.registerOreDict();
         GameRegistry.registerWorldGenerator(new MobDropOresGenerator(),0);
+        proxy.registerRenderers();
     }
     @Mod.EventHandler
     public static void postInit (FMLPostInitializationEvent event) {
