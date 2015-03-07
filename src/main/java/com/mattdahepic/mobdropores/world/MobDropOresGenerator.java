@@ -33,7 +33,7 @@ public class MobDropOresGenerator implements IWorldGenerator {
         }
     }
     private void generateSurface(World world,Random random,int posX, int posZ) {
-        LogHelper.info("Generating \"overworld\" ores...");
+        //LogHelper.info("Generating \"overworld\" ores...");
         generateOre(Config.arrow,world,random,posX,posZ);
         generateOre(Config.bone,world,random,posX,posZ);
         generateOre(Config.enderpearl,world,random,posX,posZ);
@@ -44,15 +44,14 @@ public class MobDropOresGenerator implements IWorldGenerator {
         generateOre(Config.string,world,random,posX,posZ);
     }
     private void generateNether(World world,Random random,int posX,int posZ) {
-        LogHelper.info("Generating nether ores...");
+        //LogHelper.info("Generating nether ores...");
         Predicate base = BlockHelper.forBlock(Blocks.netherrack);
         generateOre(Config.blazeRod,world,random,posX,posZ,base);
         generateOre(Config.ghastTear,world,random,posX,posZ,base);
     }
     private void generateEnd(World world,Random random,int posX,int posZ) {
-        LogHelper.info("Generating end ores...");
+        //LogHelper.info("Generating end ores...");
         Predicate base = BlockHelper.forBlock(Blocks.end_stone);
-        //generateOre();
     }
     public void generateOre (OreGenConfigOption ore,World world, Random random,int posX,int posZ) {
         generateOre(ore,world,random,posX,posZ,null);
@@ -66,10 +65,11 @@ public class MobDropOresGenerator implements IWorldGenerator {
                 BlockPos pos = new BlockPos(x,y,z);
                 if (base == null) {
                     new WorldGenMinable(ore.block, ore.veinSize).generate(world, random, pos);
-                    //LogHelper.info("Generating a(n) " + ore.block.getBlock().getLocalizedName() + " at the position " + x + "," + y + "," + z + " in the dimension " + world.provider.getDimensionId() + ".");
                 } else {
                     new WorldGenMinable(ore.block, ore.veinSize, base).generate(world, random, pos);
-                    //LogHelper.info("Generating a(n) " + ore.block.getBlock().getLocalizedName() + " at the position " + x + "," + y + "," + z + " in the dimension " + world.provider.getDimensionId() + ".");
+                }
+                if (Config.superCheatyDebugLogs) {
+                    LogHelper.info("Generating a(n) " + ore.block.getBlock().getLocalizedName() + " at the position " + x + "," + y + "," + z + " in the dimension " + world.provider.getDimensionId() + ".");
                 }
             }
         }

@@ -2,14 +2,15 @@ package com.mattdahepic.mobdropores.config;
 
 import com.mattdahepic.mobdropores.MobDropOres;
 import com.mattdahepic.mobdropores.utils.LogHelper;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.common.config.Configuration;
 
 public class Config {
     //defaults
     public static float netherStarChance = 0.01F;
+    public static boolean superCheatyDebugLogs = false;
 
     public static OreGenConfigOption arrow = new OreGenConfigOption(MobDropOres.oreArrow);
     public static OreGenConfigOption blazeRod = new OreGenConfigOption(MobDropOres.oreBlazeRod);
@@ -46,6 +47,8 @@ public class Config {
         }
     }
     public static void processConfig (Configuration c) {
+        superCheatyDebugLogs = c.getBoolean("superCheatyDebugLogs",Configuration.CATEGORY_GENERAL,superCheatyDebugLogs,"Enable logs that show where every ore is trying to be generated in the world? It's cheaty!");
+
         arrow.enabled = true;
         arrow.veinAmount = 2;
         arrow.veinSize = 5;
